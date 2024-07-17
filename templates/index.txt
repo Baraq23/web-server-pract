@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascii-art-Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+<body>
+
+  <div class="container-fluid w-75 p-3">
+    <h1 class="text-center">Ascii Art Generator</h1>
+    <p class="text-center">This Program coverrts text into your desired ascii word art.</p>
+
+    <form>
+      <div class="mb-3">
+        <label for="tarea" class="form-label">Enter text</label>
+        <textarea type="text" class="form-control border border-success" id="tarea" required placeholder="Type here..." ></textarea>
+      </div>
+      
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="bannerOption" id="std" checked>
+        <label class="form-check-label" for="std">
+          Standard Banner
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="bannerOption" id="sha" >
+        <label class="form-check-label" for="sha">
+          Shadow Banner
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="bannerOption" id="thi" >
+        <label class="form-check-label" for="thi">
+          Thinkertoy Banner
+        </label>
+      </div>
+      
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary" type="submit">Generate</button>
+      </div>
+    </form>
+
+    <!-- <div class="mb-3 border border-success">
+      Output:
+    </div> -->
+
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+   
+</body>
+</html>
