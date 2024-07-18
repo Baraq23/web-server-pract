@@ -15,7 +15,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 
 	//Register the helloHandler function as the handler for the "/" path
-	http.HandleFunc("/", helloHandler)
+	http.HandleFunc("/helloo", helloHandler)
 
 	// Start th http server on port 8080
 	fmt.Println("Starting server on: 8080")
