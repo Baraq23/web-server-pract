@@ -4,6 +4,7 @@ import (
 	"os"
 	"fmt"
 	"net/http"
+	"web2/functions"
 	"text/template"
 	"path/filepath"
 
@@ -15,12 +16,20 @@ import (
 			fmt.Fprintf(w, "ParseForm() Error: %v", err)
 			os.Exit(1)
 		}
-		fName := r.FormValue("fName")
-		addr := r.FormValue("address")
-		fmt.Fprintf(w, "Post request successful\n")
-		fmt.Fprintf(w, "First Name: %v\n", fName)
-		fmt.Fprintf(w, "Address: %v\n", addr)
-		os.Exit(1)
+		input := r.FormValue("text")
+		banner := r.FormValue("banner")
+		art := asciiart.Start(input, banner)
+
+		data := formData{
+			AsciiArt : art,
+			Input : input,
+
+		}
+
+		// fmt.Fprintf(w, "Post request successful\n")
+		// fmt.Fprintf(w, "First Name: %v\n", fName)
+		// fmt.Fprintf(w, "Address: %v\n", addr)
+		// os.Exit(1)
 	}
 
 	tmpl, err := template.ParseFiles(filepath.Join("static", "form.html"))

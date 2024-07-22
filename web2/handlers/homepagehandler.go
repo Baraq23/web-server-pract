@@ -26,5 +26,5 @@ import (
 		fmt.Println(http.StatusAccepted, "Request Accepted")
 	}
 
-	fmt.Fprintf(w, "hello there")
+	fmt.Fprintf(w, "hello\nthere")
 }
