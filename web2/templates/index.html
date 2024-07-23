@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Static Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ascii-art</title>
 </head>
 <body>
-    <h2>Static Website 01</h2>
+  <h1>Ascii-Art Generator</h1>
+  <form action="/ascii-art" method="post">
+    <label for="tarea">Text</label><br>
+    <textarea name="tArea" id="" cols="30" rows="5" placeholder="Write text here..."></textarea>
+    <div>
+    <input type="radio" name="banner" id="std" value="./banners/standard.txt" checked><label for="std">Standard</label><br>
+
+    <input type="radio" name="banner" id="sha" value="./banners/shadow.txt" ><label for="sha">Shadow</label><br>
+
+    <input type="radio" name="banner" id="thi" value="./banners/thinkertoy.txt" ><label for="thi">Thinkertoy</label><br>
+
+  </div>
+    <input type="submit" value="submit">
+  </form>
 </body>
 </html>

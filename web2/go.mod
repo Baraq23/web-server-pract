@@ -1,3 +1,3 @@
-module web2
+module ascii-art-web
 
-go 1.22.2
+go 1.22.1

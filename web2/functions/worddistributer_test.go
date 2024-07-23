@@ -2,11 +2,9 @@ package asciiart
 
 import (
 	"testing"
-	asciiart "asciiart/functions"
 )
-	
 
-func TestStart(t *testing.T) {
+func TestWordDistributer(t *testing.T) {
 	type test struct {
 		name   string
 		input  string
@@ -21,7 +19,7 @@ func TestStart(t *testing.T) {
 
 	for _, tc := range tests {
 		t.Run(tc.name, func(t *testing.T) {
-			if got := asciiart.Start(tc.input, "standard.txt"); got != tc.output {
+			if got := WordDistributor(tc.input, "../banners/standard.txt"); got != tc.output {
 				t.Errorf("Expected:\n %v \n Got:\n %v \n", tc.output, got)
 			}
 		})

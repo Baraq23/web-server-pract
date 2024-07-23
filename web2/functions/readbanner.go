@@ -2,15 +2,17 @@ package asciiart
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 )
 
-// this function maps the ascii charracters to their corresponding art
+// This function ReadBanner() maps the ascii charracters to their corresponding art.
 func ReadBanner(file string) map[rune][]string {
 	asciiMap := make(map[rune][]string)
 	bannerFile, err := os.Open(file)
 	if err != nil {
-		panic(err)
+		fmt.Printf("Error: Could not open %v file\n", file)
+		os.Exit(1)
 	}
 	defer bannerFile.Close()
 	scanner := bufio.NewScanner(bannerFile)
