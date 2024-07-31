@@ -14,13 +14,13 @@ func AsciiArtHandler(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/ascii-art" {
 		http.Error(w, "404 Page not found", http.StatusNotFound)
 		fmt.Println("404 Page not found", http.StatusNotFound)
-		os.Exit(1)
+		return
 	}
 	if r.Method == http.MethodPost {
 		fmt.Println("Inside method: ", http.MethodPost)
 		if err := r.ParseForm(); err != nil {
 			fmt.Fprintf(w, "ParseForm() Error: %v", err)
-			os.Exit(1)
+			return
 		}
 		input := r.FormValue("tArea")
 		banner := r.FormValue("banner")
@@ -36,7 +36,7 @@ func AsciiArtHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles(filepath.Join("templates", "ascii-art.html"))
 	if err != nil {
 		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
-		os.Exit(1)
+		return
 	}
 
 	if err := tmpl.Execute(w, data); err != nil {
